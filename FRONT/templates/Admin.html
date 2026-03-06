@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="../css/styles2.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/perfilModal.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Barra superior actualizada -->
+    <div class="barra-superior">
+        <div class="logo-container">
+            <img src="../img/logo.png" alt="Logo TE LLEVO 21" class="logo-img">
+            <span class="logo-text">TE LLEVO 21</span>
+        </div>
+        <div class="perfil">
+            <button type="button" class="perfil-btn" data-bs-toggle="modal" data-bs-target="#perfilModal">
+                <i class="fas fa-user-circle"></i>
+                <span>Mi Perfil</span>
+            </button>
+        </div>
+    </div>
+    <div class="admin-container">
+        <h1>Panel de Administración de Usuarios</h1>
+ 
+        <!-- Agregar barra de búsqueda -->
+        <h4>Buscar un Usuario:</h4>
+        <div class="search-container">
+            <input type="text" 
+                   class="search-input" 
+                   placeholder="Buscar por DNI..."
+                   id="searchDNI">
+            
+            <div class="buttons-container">
+                <button class="btn-search" onclick="buscarPorDNI()">
+                    <i class="fas fa-search btn-icon"></i>
+                    Buscar
+                </button>
+                
+                <button class="btn-show-all" onclick="fetchUsuarios()">
+                    <i class="fas fa-users btn-icon"></i>
+                    Mostrar Todos
+                </button>
+            </div>
+        </div>
+
+        <!-- Tabla de usuarios -->
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>DNI</th>
+                    <th>Teléfono</th>
+                    <th>Rol</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                <!-- Los usuarios se cargarán aquí dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para editar usuario -->
+    <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editUserModalLabel">Editar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editUserForm">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dni" class="form-label">DNI:</label>
+                            <input type="text" class="form-control" id="dni" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono:</label>
+                            <input type="text" class="form-control" id="telefono" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rol" class="form-label">Rol:</label>
+                            <select class="form-control" id="rol" required onchange="toggleConductorFields()">
+                                <option value="pasajero">Pasajero</option>
+                                <option value="conductor">Conductor</option>
+                                <option value="administrador">Administrador</option>
+                            </select>
+                        </div>
+
+                        <!-- Campos adicionales para conductor -->
+                        <div id="conductorFields" style="display: none;">
+                            <h3>Información del Vehículo</h3>
+                            <div class="mb-3">
+                                <label for="modeloVehiculo" class="form-label">Modelo del Vehículo:</label>
+                                <input type="text" class="form-control" id="modeloVehiculo">
+                            </div>
+                            <div class="mb-3">
+                                <label for="anioVehiculo" class="form-label">Año del Vehículo:</label>
+                                <input type="number" class="form-control" id="anioVehiculo">
+                            </div>
+                            <div class="mb-3">
+                                <label for="matricula" class="form-label">Número de Matrícula:</label>
+                                <input type="text" class="form-control" id="matricula">
+                            </div>
+                            <div class="mb-3">
+                                <label for="licenciaConducir" class="form-label">Licencia de Conducir:</label>
+                                <input type="text" class="form-control" id="licenciaConducir">
+                            </div>
+                            <div class="mb-3">
+                                <label for="permisoOperacion" class="form-label">Permiso de Operación:</label>
+                                <input type="text" class="form-control" id="permisoOperacion">
+                            </div>
+                            <div class="mb-3">
+                                <label for="registroVehiculo" class="form-label">Registro del Vehículo:</label>
+                                <input type="text" class="form-control" id="registroVehiculo">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="guardarCambios()">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalContainer"></div>
+
+    <script src="../carpeta.js/Admin.js"></script>
+    <script src="../carpeta.js/perfilModal.js"></script>
+</body>
+</html>

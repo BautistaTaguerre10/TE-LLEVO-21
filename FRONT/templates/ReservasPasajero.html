@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de Pasajes</title>
+    <link rel="stylesheet" href="../css/styles2.css">
+    <link rel="stylesheet" href="../css/Busqueda.css">
+    <link rel="stylesheet" href="../css/perfilModal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- Barra superior actualizada -->
+    <div class="barra-superior">
+        <div class="logo-container">
+            <img src="../img/logo.png" alt="Logo TE LLEVO 21" class="logo-img">
+            <span class="logo-text">TE LLEVO 21</span>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="#" onclick="redirigirMenu('Buscar')" class="nav-link active">
+                <i class="fas fa-home"></i>
+                <span class="nav-text">Inicio</span>
+            </a>
+
+            <a href="#" onclick="redirigirMenu('Actividad')" class="nav-link">
+                <i class="fas fa-chart-line"></i>
+                <span class="nav-text">Actividad</span>
+            </a>
+
+            <a href="#" onclick="redirigirMenu('Notificaciones')" class="nav-link">
+                <i class="fas fa-bell"></i>
+                <span class="nav-text">Notificaciones</span>
+            </a>
+        </nav>
+
+        <div class="perfil">
+            <button type="button" class="perfil-btn" data-bs-toggle="modal" data-bs-target="#perfilModal">
+                <i class="fas fa-user-circle"></i>
+                <span>Mi Perfil</span>
+            </button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="welcome-section">
+            <h2>
+                <h2>Bienvenido: <span id="name"></span></h2>
+            </h2>
+            <p>Encuentra tu próximo viaje entre las mejores opciones disponibles</p>
+          
+        </div>
+
+        <div class="busqueda-header">
+            <h2><i class="fas fa-search"></i> Buscar Pasajes</h2>
+        </div>
+
+        <form id="buscarPasajesForm">
+            <div class="form-grupo">
+                <label for="fecha">
+                    <i class="fas fa-calendar"></i> Fecha
+                </label>
+                <input type="date" id="fecha" required>
+            </div>
+
+            <div class="form-grupo">
+                <label for="tipo_viaje">
+                    <i class="fas fa-route"></i> Tipo de Viaje
+                </label>
+                <select id="tipo_viaje" required>
+                    <option value="">Seleccione una ruta</option>
+                    <option value="ida">Nueva Córdoba / Campus siglo 21</option>
+                    <option value="vuelta">Campus Siglo 21 / Nueva Córdoba</option>
+                    <option value="ida_vuelta">Los dos viajes</option>
+                </select>
+            </div>
+
+            <button type="submit">
+                <i class="fas fa-search"></i> Buscar Disponibilidad
+            </button>
+        </form>
+
+        <div id="resultados" class="fade-in">
+            <!-- Los resultados se cargarán dinámicamente aquí -->
+        </div>
+    </div>
+
+    <div id="modalContainer"></div>
+
+    <script src="../carpeta.js/BuscarPasaje.js?v=1"></script>
+    <script src="../carpeta.js/perfilModal.js"></script>
+</body>
+
+</html>

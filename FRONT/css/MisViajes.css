@@ -1,0 +1,275 @@
+/* Contenedor principal específico para Mis Viajes */
+.container {
+    max-width: 1400px;
+    margin: 100px auto 40px;
+    padding: 30px;
+    background-color: var(--background-color);
+}
+
+/* Estilos para el título principal */
+.container h1 {
+    color: var(--primary-color);
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.container h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+/* Contenedor de búsqueda */
+.search-container {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    color: var(--text-light-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group label i {
+    color: var(--primary-color);
+}
+
+.form-group input {
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 167, 157, 0.1);
+    outline: none;
+}
+
+/* Contenedor de items */
+#itemsContainer {
+    display: grid;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.item-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.item-container:hover {
+    transform: translateY(-5px);
+}
+
+/* Información del viaje */
+.viaje-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 25px;
+    background-color: #f8fafb;
+}
+
+.viaje-info-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Tabla de pasajeros */
+.table-wrapper {
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+tr:hover td {
+    background-color: #f8fafb;
+}
+
+/* Estilos base para todos los botones */
+.botones-container button,
+.modificar-btn,
+.eliminar-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+/* Botón de búsqueda */
+#searchButton {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 4px 15px rgba(0, 167, 157, 0.2);
+}
+
+#searchButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 167, 157, 0.3);
+    background: linear-gradient(135deg, var(--secondary-color), var(--button-hover-color));
+}
+
+/* Botón mostrar todos */
+#showAllButton {
+    background: linear-gradient(135deg, #4a5568, #2d3748);
+    box-shadow: 0 4px 15px rgba(74, 85, 104, 0.2);
+}
+
+#showAllButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 85, 104, 0.3);
+    background: linear-gradient(135deg, #2d3748, #1a202c);
+}
+
+/* Botón modificar */
+.modificar-btn {
+    background: linear-gradient(135deg, #3182ce, #2b6cb0);
+    box-shadow: 0 4px 15px rgba(49, 130, 206, 0.2);
+}
+
+.modificar-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(49, 130, 206, 0.3);
+    background: linear-gradient(135deg, #2b6cb0, #2c5282);
+}
+
+/* Botón eliminar */
+.eliminar-btn {
+    background: linear-gradient(135deg, #e53e3e, #c53030);
+    box-shadow: 0 4px 15px rgba(229, 62, 62, 0.2);
+}
+
+.eliminar-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 62, 62, 0.3);
+    background: linear-gradient(135deg, #c53030, #9b2c2c);
+}
+
+/* Iconos en los botones */
+.botones-container button i,
+.modificar-btn i,
+.eliminar-btn i {
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+}
+
+.botones-container button:hover i,
+.modificar-btn:hover i,
+.eliminar-btn:hover i {
+    transform: scale(1.1);
+}
+
+/* Contenedor de botones de búsqueda */
+.search-container .botones-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Contenedor de botones de acciones */
+.item-container .botones-container {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .search-container .botones-container,
+    .item-container .botones-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .botones-container button,
+    .modificar-btn,
+    .eliminar-btn {
+        width: 100%;
+        padding: 14px 20px;
+    }
+}
+
+/* Mensajes de estado */
+.no-pasajeros {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-muted-color);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.item-container {
+    animation: fadeIn 0.5s ease forwards;
+}

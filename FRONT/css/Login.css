@@ -1,0 +1,96 @@
+
+/* Contenedor del Login */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* Estilos para el logo */
+.login-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Título del emprendimiento */
+.login-title {
+    color: var(--primary-color);
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* Contenedor de formulario */
+.login-form {
+    margin-top: 20px;
+}
+
+/* Estilos para los campos de entrada */
+.login-input {
+    width: 95%;
+    padding: 14px 15px;
+    margin-bottom: 25px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.login-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 167, 157, 0.1);
+    background-color: white;
+}
+
+/* Botón de inicio de sesión */
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Enlaces adicionales */
+.login-links {
+    margin-top: 20px;
+}
+
+.login-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+.login-links a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Mensaje de error */
+.login-error {
+    color: #ff3333;
+    font-size: 14px;
+    margin-top: 10px;
+}
+

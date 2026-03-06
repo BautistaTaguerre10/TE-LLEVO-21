@@ -1,0 +1,121 @@
+
+/* Contenedor del Registro */
+.registro-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    margin: 40px auto;
+}
+
+/* Título de registro */
+.registro-title {
+    color: var(--primary-color);
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.registro-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 10px auto;
+}
+
+/* Formulario de registro */
+.registro-form {
+    display: grid;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* Grupos de campos */
+.form-group {
+    position: relative;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-light-color);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Campos de entrada */
+.registro-input {
+    width: 95%;
+    padding: 14px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.registro-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 167, 157, 0.1);
+    background-color: white;
+}
+
+/* Botón de registro */
+.registro-button {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.registro-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Mensaje de validación */
+.validation-message {
+    color: #ff3333;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.registro-input:invalid:not(:placeholder-shown) + .validation-message {
+    display: block;
+}
+
+/* Enlaces adicionales */
+.registro-links {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.registro-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.registro-links a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}

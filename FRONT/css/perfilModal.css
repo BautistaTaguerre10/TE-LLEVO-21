@@ -1,0 +1,248 @@
+/* Tamaños estandarizados para los modales */
+.modal-dialog {
+    max-width: 500px;
+    margin: 1.75rem auto;
+}
+
+/* Estilos del modal */
+.modal-content {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: none;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 25px 30px;
+    background: white;
+    border-radius: 20px 20px 0 0;
+}
+
+.modal-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.4em;
+}
+
+.modal-body {
+    padding: 0 30px 20px;
+}
+
+/* Contenedor del perfil */
+.profile-container {
+    background: white;
+    border-radius: 20px;
+}
+
+/* Encabezado con imagen */
+.profile-header {
+    text-align: center;
+    margin: 20px 0 30px;
+    position: relative;
+}
+
+.profile-header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    padding: 4px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de información */
+.profile-info {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+/* Items de información */
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 8px;
+    background: white;
+    border-radius: 12px;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Etiquetas */
+.info-label {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.1em;
+    min-width: 180px;
+}
+
+/* Valores */
+.info-value {
+    color: #000000;
+    font-size: 1.1em;
+    text-align: right;
+    word-break: break-word;
+}
+
+/* Footer del modal */
+.modal-footer {
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 30px;
+    justify-content: space-between;
+}
+
+/* Botones */
+.modal-footer .btn {
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.modal-footer .btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+}
+
+.modal-footer .btn-primary:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--button-hover-color));
+    transform: translateY(-2px);
+}
+
+.modal-footer .btn-danger {
+    background: #f44336;
+    border: none;
+}
+
+.modal-footer .btn-danger:hover {
+    background: #d32f2f;
+    transform: translateY(-2px);
+}
+
+/* Modal de cambio de contraseña */
+#cambiarPasswordModal .modal-dialog {
+    max-width: 500px;
+}
+
+#cambiarPasswordModal .modal-content {
+    max-width: 500px;
+}
+
+#cambiarPasswordModal .modal-body {
+    padding: 25px 30px;
+}
+
+#cambiarPasswordModal .form-label {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+#cambiarPasswordModal .form-control {
+    padding: 12px 15px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    font-size: 1.1em;
+}
+
+#cambiarPasswordModal .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25);
+}
+
+/* Mensajes de alerta */
+.alert {
+    padding: 12px 15px;
+    border-radius: 12px;
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #e8f5e9;
+    border-color: #a5d6a7;
+    color: #2e7d32;
+}
+
+.alert-danger {
+    background-color: #ffebee;
+    border-color: #ffcdd2;
+    color: #c62828;
+}
+
+/* Media queries para responsividad */
+@media screen and (max-width: 768px) {
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .info-label {
+        min-width: unset;
+    }
+
+    .info-value {
+        text-align: left;
+        width: 100%;
+    }
+
+    .modal-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-footer .btn {
+        width: 100%;
+    }
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+    .modal-content,
+    .profile-container {
+        background: #2d2d2d;
+    }
+
+    .modal-header {
+        background: #2d2d2d;
+    }
+
+    .profile-info {
+        background: #1a1a1a;
+    }
+
+    .info-item {
+        background: #333;
+        border-bottom-color: #444;
+    }
+
+    .info-label,
+    .info-value {
+        color: #fff;
+    }
+
+    #cambiarPasswordModal .form-label {
+        color: #fff;
+    }
+
+    #cambiarPasswordModal .form-control {
+        background: #333;
+        border-color: #444;
+        color: #fff;
+    }
+} 

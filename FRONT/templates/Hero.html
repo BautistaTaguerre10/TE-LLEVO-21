@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TE LLEVO 21 - Gestión de Transporte Privado</title>
+    <style>
+        :root {
+            --primary-color: #00a79d;
+            --secondary-color: #00827a;
+            --background-color: #f5f9f9;
+            --button-hover-color: #00b386;
+            --text-light-color: #ffffff;
+            --text-muted-color: #000000;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 2;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            line-height: 1.2;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.6rem;
+            margin: 20px 0;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .hero .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .hero .features div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero .features div:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .hero button {
+            background-color: var(--text-light-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-right: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background-color: var(--text-light-color);
+        }
+
+        .hero button:active {
+            transform: translateY(1px);
+        }
+
+        .hero-image {
+            max-width: 650px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            animation: floatImage 3s ease-in-out infinite;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatImage {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+            }
+
+            .hero .features {
+                justify-content: center;
+            }
+
+            .hero-image {
+                margin-top: 40px;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Viaja con estilo y confort en <br>TE LLEVO 21</h1>
+            <p>Sistema de gestión de Transportes Privados</p>
+            <div class="features">
+                <div><span>🔒</span> Máxima seguridad</div>
+                <div><span>⭐</span> Servicio Premium</div>
+                <div><span>⏰</span>Disponibilidad</div>
+                <div><span>📍</span>Facultad Siglo 21</div>
+            </div>
+            <button id="loginButton">Ingresar</button>
+
+            <script>
+                document.getElementById('loginButton').addEventListener('click', function() {
+                    window.location.href = 'login.html';
+                });
+            </script>
+        </div>
+        <img src="../img/mer.jpg" alt="Mercedes Sprinter" class="hero-image">
+    </div>
+
+</body>
+
+</html>

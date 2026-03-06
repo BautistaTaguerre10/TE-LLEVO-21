@@ -1,0 +1,342 @@
+/* Estilos para la página del administrador */
+.admin-container {
+    max-width: 1400px;
+    margin: 100px auto 40px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.admin-container h1 {
+    color: #000000;
+    font-size: 2.2em;
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    text-align: center;
+}
+
+.admin-container h2 {
+    color: #000000;
+    font-size: 1.8em;
+    margin: 30px 0 20px;
+}
+
+.admin-container h3 {
+    color: #000000;
+    font-size: 1.5em;
+    margin: 25px 0 15px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 25px 0;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.admin-table th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+.admin-table td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #eef0f3;
+    color: var(--text-light-color);
+    font-size: 0.95em;
+}
+
+/* Efecto hover en las filas */
+.admin-table tr:hover td {
+    background-color: #f8f9fa;
+    transition: var(--transition);
+}
+
+/* Botones de acción en la tabla */
+.admin-table .btn-action {
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9em;
+}
+
+/* Botón editar */
+.btn-edit {
+    background-color: #ffc107;
+    color: #000000;
+}
+
+.btn-edit:hover {
+    background-color: #ffb300;
+    transform: translateY(-2px);
+}
+
+/* Botón eliminar */
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Botón de asignar rol */
+#assignRoleBtn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#assignRoleBtn:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--button-hover-color));
+    transform: translateY(-2px);
+}
+
+/* Mensaje de confirmación */
+#confirmation {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.success {
+    background-color: #ffffff;
+}
+
+/* Selector de roles */
+#newRole, #userSelect {
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.role-change-section {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.select-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.select-group label {
+    font-weight: 500;
+    color: #000000;
+}
+
+#userSelect, #newRole {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    border-spacing: 2px;
+    border-color: rgb(0, 0, 0);
+}
+
+.search-container {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.modal-dialog {
+    max-width: 800px;
+}
+
+#conductorFields {
+    border-top: 1px solid #dee2e6;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.admin-table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Campo de búsqueda */
+.search-input {
+    flex: 1;
+    min-width: 250px;
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: #f8f9fa;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 167, 157, 0.1);
+}
+
+/* Botones principales */
+.btn-primary-action {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.btn-primary-action:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--button-hover-color));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 167, 157, 0.2);
+}
+
+/* Botón de mostrar todos */
+.btn-show-all {
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.btn-show-all:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 167, 157, 0.2);
+}
+
+/* Contenedor de botones */
+.buttons-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Iconos en los botones */
+.btn-icon {
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+    }
+
+    .btn-primary-action,
+    .btn-show-all {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Estilos mejorados para el botón de búsqueda */
+.btn-search {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-search:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--button-hover-color));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-search .btn-icon {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-search:hover .btn-icon {
+    transform: scale(1.1);
+}

@@ -1,0 +1,398 @@
+/* Estilos base */
+body {
+    background-color: var(--background-color);
+    min-height: 100vh;
+    padding-top: 70px;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Contenedor principal ajustado */
+.container {
+    max-width: 1000px;
+    margin: 80px auto 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0, 167, 157, 0.1);
+    padding: 35px;
+    position: relative;
+}
+
+/* Sección de bienvenida */
+.welcome-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    margin: -35px -35px 30px -35px;
+    padding: 35px;
+    border-radius: 20px 20px 0 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(30%, -30%);
+}
+
+.welcome-section h2 {
+    font-size: 2em;
+    margin: 0;
+    font-weight: 600;
+}
+
+.welcome-section p {
+    margin: 10px 0 0;
+    opacity: 0.9;
+    font-size: 1.1em;
+}
+
+/* Encabezado de búsqueda */
+.busqueda-header {
+    margin: 40px 0 30px;
+    text-align: center;
+    position: relative;
+}
+
+.busqueda-header h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.busqueda-header::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Formulario de búsqueda */
+#buscarPasajesForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    background: #f8fafb;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 0 30px 30px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-grupo label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light-color);
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.form-grupo label i {
+    color: var(--primary-color);
+}
+
+.form-grupo input,
+.form-grupo select {
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.95em;
+    transition: var(--transition);
+    background: white;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(0, 167, 157, 0.1);
+    outline: none;
+}
+
+#buscarPasajesForm button {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#buscarPasajesForm button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 167, 157, 0.2);
+    background: linear-gradient(135deg, var(--secondary-color), var(--button-hover-color));
+}
+
+/* Resultados */
+#resultados {
+    padding: 30px;
+    background: #f8fafb;
+    border-radius: 15px;
+    margin: 0 30px;
+}
+
+.resultado-item {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.resultado-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 167, 157, 0.15);
+    border-color: var(--primary-color);
+}
+
+.resultado-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.viaje-info h3 {
+    color: var(--primary-color);
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.viaje-info h3 i {
+    color: var(--primary-color);
+}
+
+.ruta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    font-size: 0.95em;
+}
+
+.ruta i {
+    color: var(--secondary-color);
+}
+
+.precio {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+}
+
+.precio .monto {
+    font-size: 1.4em;
+    font-weight: 600;
+    display: block;
+}
+
+.precio .etiqueta {
+    font-size: 0.8em;
+    opacity: 0.9;
+}
+
+.resultado-detalles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background: #f8fafb;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.detalle-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.detalle-item i {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 167, 157, 0.1);
+}
+
+.detalle-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.detalle-info .etiqueta {
+    font-size: 0.85em;
+    color: #64748b;
+}
+
+.detalle-info .valor {
+    font-weight: 600;
+    color: var(--text-light-color);
+}
+
+.resultado-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn-reservar {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 12px 30px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-reservar i {
+    font-size: 1.1em;
+}
+
+.btn-reservar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 167, 157, 0.2);
+    background: linear-gradient(135deg, var(--secondary-color), var(--button-hover-color));
+}
+
+/* Estilos para viajes llenos */
+.text-danger {
+    color: #dc3545 !important;
+    font-weight: bold;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.alert-danger {
+    background-color: #fff5f5;
+    color: #dc3545;
+    border: 2px solid #dc3545;
+}
+
+.alert i {
+    font-size: 1.2em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .welcome-section {
+        margin: -20px -20px 20px -20px;
+        padding: 25px;
+    }
+
+    #buscarPasajesForm {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        margin: 0 15px 20px;
+    }
+
+    #resultados {
+        padding: 20px;
+        margin: 0 15px;
+    }
+
+    .welcome-section h2 {
+        font-size: 1.6em;
+    }
+
+    .busqueda-header h2 {
+        font-size: 1.5em;
+    }
+
+    .resultado-detalles {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .resultado-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .precio {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .btn-reservar {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}

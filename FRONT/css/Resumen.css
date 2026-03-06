@@ -1,0 +1,208 @@
+/* estilos pagos*/
+.resumen-compra, .resumen-viaje {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+/* Ajuste de la imagen dentro del contenedor */
+.image-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor principal del resumen */
+.container {
+    max-width: 600px;
+    margin: 100px auto 40px;
+    padding: 0 20px;
+}
+
+.resumen-compra {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    position: relative;
+}
+
+/* Encabezado del resumen */
+.resumen-compra h1 {
+    color: #000000;
+    font-size: 2.2em;
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    text-align: center;
+}
+
+/* Detalles del resumen */
+.resumen-compra p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.resumen-compra strong {
+    color: #000000;
+    font-size: 1.1em;
+    min-width: 200px;
+    font-weight: 600;
+}
+
+.resumen-compra span {
+    color: #000000;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-align: right;
+}
+
+/* Estilos especiales para precios */
+#precio, #cargo_servicio, #total {
+    font-family: 'Roboto Mono', monospace;
+    color: #000000;
+    font-weight: 600;
+}
+
+/* Total con estilo especial */
+.resumen-compra p:last-of-type {
+    margin-top: 30px;
+    background: #f0f0f0;
+    border-left: 4px solid var(--secondary-color);
+    padding: 20px;
+}
+
+.resumen-compra p:last-of-type strong,
+.resumen-compra p:last-of-type span {
+    color: #000000;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+/* Botón de reserva */
+#reservarBtn {
+    width: 100%;
+    padding: 18px;
+    margin-top: 30px;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#reservarBtn:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--button-hover-color));
+}
+
+/* Efectos decorativos sutiles */
+.resumen-compra::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+        margin-top: 80px;
+    }
+
+    .resumen-compra {
+        padding: 25px;
+    }
+
+    .resumen-compra p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .resumen-compra strong {
+        min-width: unset;
+    }
+
+    .resumen-compra h1 {
+        font-size: 1.8em;
+    }
+
+    .resumen-compra span {
+        text-align: left;
+    }
+}
+
+/* Estilos para los valores monetarios */
+[id*="precio"], [id*="cargo"], [id*="total"] {
+    position: relative;
+    padding-left: 20px;
+}
+
+[id*="precio"]::before, [id*="cargo"]::before, [id*="total"]::before {
+    content: '$';
+    position: absolute;
+    left: 0;
+    color: inherit;
+}
+
+/* Contenedor de información adicional */
+.info-adicional {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.info-adicional h2 {
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.info-adicional p {
+    color: #000000;
+    margin: 10px 0;
+}
+
+.modal-content {
+    border-radius: 15px;
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-radius: 15px 15px 0 0;
+}
+
+.form-control {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#confirmarPago {
+    background-color: #007bff;
+    border: none;
+}
+
+#confirmarPago:hover {
+    background-color: #0056b3;
+}
